@@ -1,0 +1,50 @@
+<div class="login-container flex justify-content-center">
+  <div class="w-8">
+    <div class="container w-full">
+      <div class="card card-container">
+        <form autocomplete="new-password">
+          <div class="grid h-35rem">
+            <div class="col-6 p-fluid justify-content-center flex">
+              <div class="w-9">
+                <router-outlet></router-outlet>
+                <!-- <div class="footer-action mt-5">
+                  <ng-container *ngIf="!screenType">
+                    New User? <a [routerLink]="['/auth/signup']">SignUp</a>
+                  </ng-container>
+                  <ng-container *ngIf="screenType === SCREEN_TYPES.SIGNUP">
+                    Have an Account?
+                    <a [routerLink]="['/auth/signin']">SignIn</a>
+                  </ng-container>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="col-1">
+              <p-divider layout="vertical">
+                <b>OR</b>
+              </p-divider>
+            </div>
+            <div class="col-5 flex align-items-center justify-content-center">
+              <div class="p-fluid w-20rem">
+                <a href="javascript:void()" class="login-button google">
+                  <i class="fab fa-google button-icon"></i>
+                  Sign in with Google
+                </a>
+
+                <a href="javascript:void()" class="login-button facebook">
+                  <i class="fab fa-facebook-f button-icon"></i>
+                  Sign in with Facebook
+                </a>
+
+                <a href="javascript:void()" class="login-button twitter">
+                  <i class="fab fa-twitter button-icon"></i>
+                  Sign in with Twitter
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="login-box">
+  <div class="header flex justify-content-center m-5">
+    <h2 class="heading-text">SignIn</h2>
+    <i class="fa fa-area-chart"></i>
+  </div>
+  <div class="field p-fluid mb-5">
+    <span class="p-float-label">
+      <input type="text" id="inputtext" pInputText autocomplete="off" />
+      <label for="inputtext">Email/UserName</label>
+    </span>
+  </div>
+  <div class="field p-fluid mb-5">
+    <span class="p-float-label">
+      <p-password [toggleMask]="true"></p-password>
+      <label for="password">Password</label>
+    </span>
+  </div>
+  <p-button type="submit" label="Login"></p-button>
+  <div class="footer mt-3 flex justify-content-between">
+    <a routerLink="/auth/reset-password">Forgot Password?</a>
+    <a href="javascript:void(0)">Help?</a>
+  </div>
+</div>
+<div class="footer-action mt-5">
+  New User? <a [routerLink]="['/auth/signup']">SignUp</a>
+</div>
+
+<!-- <div class="login-container flex justify-content-center">
+  <div class="w-8">
+    <div class="container w-full">
+      <div class="card card-container">
+        <form autocomplete="new-password">
+          <div class="grid h-35rem">
+            <div class="col-6 p-fluid justify-content-center flex">
+              <div class="w-9">
+                <div class="header flex justify-content-center m-5">
+                  <h2 class="heading-text">SignIn</h2>
+                  <i class="fa fa-area-chart"></i>
+                </div>
+                <div class="field p-fluid mb-5">
+                  <span class="p-float-label">
+                    <input
+                      type="text"
+                      id="inputtext"
+                      pInputText
+                      autocomplete="off"
+                    />
+                    <label for="inputtext">Email/UserName</label>
+                  </span>
+                </div>
+                <div class="field p-fluid mb-5">
+                  <span class="p-float-label">
+                    <p-password [toggleMask]="true"></p-password>
+                    <label for="password">Password</label>
+                  </span>
+                </div>
+                <p-button type="submit" label="Login"></p-button>
+                <div class="footer mt-3 flex justify-content-between">
+                  <a href="">Forgot Password?</a>
+                  <a href="">Help?</a>
+                </div>
+                div.
+              </div>
+            </div>
+
+            <div class="col-1">
+              <p-divider layout="vertical">
+                <b>OR</b>
+              </p-divider>
+            </div>
+            <div class="col-5 flex align-items-center justify-content-center">
+              <div class="p-fluid w-20rem">
+                <a href="#" class="login-button google">
+                  <i class="fab fa-google button-icon"></i>
+                  Sign in with Google
+                </a>
+
+                <a href="#" class="login-button facebook">
+                  <i class="fab fa-facebook-f button-icon"></i>
+                  Sign in with Facebook
+                </a>
+
+                <a href="#" class="login-button twitter">
+                  <i class="fab fa-twitter button-icon"></i>
+                  Sign in with Twitter
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
