@@ -9,14 +9,11 @@ exports.isEmailAlreadyUsed = async (email) => {
       const { rows } = await client.query(query, [email]);
       const isEmailAlreadyUsed = parseInt(rows[0].count, 10);
       if (isEmailAlreadyUsed > 0) {
-        throw Error("Email already Used!");
+        return false;
       }
       return true;
     }
   } catch (error) {
-    throw Error({
-      status: 409,
-      message: error,
-    });
+    return false;
   }
 };

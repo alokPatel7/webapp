@@ -8,17 +8,23 @@ const {
 exports.SignUp = async (params) => {
   try {
     const hashedPassword = await bcrypt.hash(params.password, 10);
-    const firstName = params.email.split("@")[0];
     const query = `INSERT INTO "user" ("firstName", "lastName", "email", "password", "isActive", "profileImage") VALUES ($1, $2, $3, $4, $5, $6)`;
-    const values = [firstName, null, params.email, hashedPassword, true, ""];
+    const values = [
+      params.firstName,
+      params.lastName,
+      params.email,
+      hashedPassword,
+      true,
+      "",
+    ];
 
     const client = await pool.connect();
     const result = await client.query(query, values);
 
     const tokenPayload = {
       id: result.insertId,
-      firstName,
-      lastName: null,
+      firstName: params.firstName,
+      lastName: params.lastName,
       email: params.email,
     };
 
@@ -27,10 +33,7 @@ exports.SignUp = async (params) => {
     return {
       ...token,
       user: {
-        id: result.insertId,
-        firstName,
-        lastName: null,
-        email: params.email,
+        ...tokenPayload,
       },
     };
   } catch (error) {

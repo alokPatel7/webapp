@@ -1,21 +1,33 @@
 <div class="login-box">
-  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="signUpForm" autocomplete="off">
     <div class="header flex justify-content-center m-5">
       <h2 class="heading-text">SignUp</h2>
       <i class="fa fa-area-chart"></i>
     </div>
-    <!-- <div class="field p-fluid mb-3">
-      <span class="p-float-label">
-        <input
-          type="text"
-          id="username"
-          formControlName="username"
-          pInputText
-          autocomplete="off"
-        />
-        <label for="username">Username</label>
-      </span>
-    </div> -->
+    <div class="grid">
+      <div class="p-fluid col-6">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="firstName"
+            formControlName="firstName"
+            pInputText
+          />
+          <label for="firstName">First Name</label>
+        </span>
+      </div>
+      <div class="p-fluid col-6">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+            pInputText
+          />
+          <label for="lastName">Last Name</label>
+        </span>
+      </div>
+    </div>
     <div class="field p-fluid mb-3">
       <span class="p-float-label">
         <input type="email" id="email" formControlName="email" pInputText />
@@ -38,7 +50,8 @@
         <label for="password">Re-Password</label>
       </span>
     </div>
-    <p-button type="submit" label="Login"></p-button>
+    <button pButton label="SignUp" (click)="onSubmit()"></button>
+    <!-- <p-button type="submit" (click)="onSubmit()" label="SignIn"></p-button> -->
     <div class="footer mt-3 flex justify-content-between">
       <a href=""></a>
       <a href="">Help?</a>

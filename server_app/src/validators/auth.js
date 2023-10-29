@@ -3,6 +3,8 @@ const Joi = require("joi");
 module.exports = {
   // POST /v1/auth/register
   signup: {
+    firstName: Joi.string().required(),
+    lastName: Joi.string(),
     email: Joi.string().email().required(),
     password: Joi.string().min(6).max(128).required(),
   },

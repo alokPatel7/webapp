@@ -25,17 +25,17 @@ const routes: Routes = [
         data: [SCREEN_TYPES.SIGNUP],
       },
       {
-        path: 'reset-password',
-        component: ForgotPasswordComponent,
-        pathMatch: 'full',
-        data: [SCREEN_TYPES.FORGET_PASSWORD],
-      },
-      {
         path: '',
         redirectTo: 'signin',
         pathMatch: 'full',
       },
     ],
+  },
+  {
+    path: 'reset-password',
+    component: ForgotPasswordComponent,
+    pathMatch: 'full',
+    data: [SCREEN_TYPES.FORGET_PASSWORD],
   },
 ];
 

@@ -6,13 +6,13 @@ const logger = require("morgan");
 const cors = require("cors");
 
 const authRouter = require("./src/routes/auth");
-const usersRouter = require("./src/routes/users");
+const studentRouter = require("./src/routes/student");
 require("dotenv").config();
 
 const app = express();
 
 app.use(
-  cors({
+  cors({ 
     origin: "*",
   })
 );
@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/v1", authRouter);
-app.use("/api/v2", usersRouter);
+app.use("/api/v2", studentRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

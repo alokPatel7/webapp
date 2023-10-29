@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { signUp } from 'src/app/actions/auth.actions';
 
@@ -8,28 +13,23 @@ import { signUp } from 'src/app/actions/auth.actions';
   templateUrl: './sign-up.component.html',
 })
 export class SignUpComponent {
-  signUpForm!: FormGroup;
+  signUpForm!: any;
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.signUpForm = new FormGroup({
-      // username: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(8),
-      ]),
-      checkpassword: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(8),
-      ]),
+    this.signUpForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: [''],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      checkpassword: ['', Validators.required],
     });
   }
 
   onSubmit() {
+    console.log(this.signUpForm.value);
     if (this.signUpForm.valid) {
-      console.log(this.signUpForm.value);
       const { email, password } = this.signUpForm.value;
       this.store.dispatch(signUp({ email, password }));
     }
