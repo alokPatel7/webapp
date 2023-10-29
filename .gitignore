@@ -4,3 +4,5 @@ ang_ui/.angular
 
 
 server_app/node_modules
+restfull/node_modules
+restfull/dist
